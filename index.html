@@ -14,9 +14,10 @@
             --accent-hover: #1d4ed8;
             --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
             --radius: 12px;
+            --search-bg: #ffffff;
+            --search-border: #cbd5e1;
         }
 
-        /* Simple modern dark mode preference support */
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-color: #0f172a;
@@ -26,6 +27,8 @@
                 --accent: #3b82f6;
                 --accent-hover: #60a5fa;
                 --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2);
+                --search-bg: #1e293b;
+                --search-border: #334155;
             }
         }
 
@@ -41,9 +44,9 @@
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
         }
 
         .container {
@@ -53,7 +56,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         header h1 {
@@ -68,6 +71,59 @@
             font-size: 1rem;
         }
 
+        /* Search Bar Styling */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .search-form {
+            display: flex;
+            position: relative;
+            box-shadow: var(--shadow);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            padding-right: 4.5rem;
+            font-size: 1.1rem;
+            border: 1px solid var(--search-border);
+            border-radius: 50px;
+            background-color: var(--search-bg);
+            color: var(--text-main);
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            bottom: 6px;
+            padding: 0 1.25rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .search-button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Grid Layout */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -122,70 +178,78 @@
             <p>Quick Access Admin Portal</p>
         </header>
 
+        <!-- Google Search Form -->
+        <div class="search-container">
+            <form class="search-form" action="https://google.com" method="get" target="_blank">
+                <input type="text" name="q" class="search-input" placeholder="Search Google..." autofocus required autocomplete="off">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+
         <main class="grid">
-            <a href="http://12299.axiscare.com/" class="card" target="_blank">
+            <a href="http://axiscare.com" class="card" target="_blank">
                 <div class="card-title">AxisCare</div>
-                <div class="card-url">12299.axiscare.com</div>
+                <div class="card-url">://axiscare.com</div>
             </a>
 
-            <a href="https://tsk.bamboohr.com/" class="card" target="_blank">
+            <a href="https://bamboohr.com" class="card" target="_blank">
                 <div class="card-title">BambooHR</div>
-                <div class="card-url">tsk.bamboohr.com</div>
+                <div class="card-url">://bamboohr.com</div>
             </a>
 
-            <a href="https://go.careacademy.com" class="card" target="_blank">
+            <a href="https://careacademy.com" class="card" target="_blank">
                 <div class="card-title">CareAcademy</div>
-                <div class="card-url">go.careacademy.com</div>
+                <div class="card-url">://careacademy.com</div>
             </a>
 
-            <a href="https://backgroundcheck.clearstar.net" class="card" target="_blank">
+            <a href="https://clearstar.net" class="card" target="_blank">
                 <div class="card-title">ClearStar</div>
                 <div class="card-url">backgroundcheck.clearstar.net</div>
             </a>
 
-            <a href="https://app.hireology.com" class="card" target="_blank">
+            <a href="https://hireology.com" class="card" target="_blank">
                 <div class="card-title">Hireology</div>
-                <div class="card-url">app.hireology.com</div>
+                <div class="card-url">://hireology.com</div>
             </a>
 
-            <a href="https://ohpnm.omes.maximus.com/OH_PNM_PROD/" class="card" target="_blank">
+            <a href="https://maximus.com" class="card" target="_blank">
                 <div class="card-title">PNM Module</div>
-                <div class="card-url">ohpnm.omes.maximus.com</div>
+                <div class="card-url">://maximus.com</div>
             </a>
 
-            <a href="https://qbo.intuit.com/app/get-things-done" class="card" target="_blank">
+            <a href="https://intuit.com" class="card" target="_blank">
                 <div class="card-title">QuickBooks Online</div>
-                <div class="card-url">qbo.intuit.com</div>
+                <div class="card-url">://intuit.com</div>
             </a>
 
-            <a href="https://ringsense.ringcentral.com/" class="card" target="_blank">
+            <a href="https://ringcentral.com" class="card" target="_blank">
                 <div class="card-title">RingCentral RingSense</div>
-                <div class="card-url">ringsense.ringcentral.com</div>
+                <div class="card-url">://ringcentral.com</div>
             </a>
 
-            <a href="https://service.ringcentral.com/" class="card" target="_blank">
+            <a href="https://ringcentral.com" class="card" target="_blank">
                 <div class="card-title">RingCentral Service</div>
-                <div class="card-url">service.ringcentral.com</div>
+                <div class="card-url">://ringcentral.com</div>
             </a>
 
-            <a href="https://app.sensi.ai/" class="card" target="_blank">
+            <a href="https://sensi.ai" class="card" target="_blank">
                 <div class="card-title">Sensi.ai</div>
                 <div class="card-url">app.sensi.ai</div>
             </a>
 
-            <a href="https://appemployer.tapcheck.com" class="card" target="_blank">
+            <a href="https://tapcheck.com" class="card" target="_blank">
                 <div class="card-title">Tapcheck Employer</div>
-                <div class="card-url">appemployer.tapcheck.com</div>
+                <div class="card-url">://tapcheck.com</div>
             </a>
 
-            <a href="https://employers.vitablehealth.com/" class="card" target="_blank">
+            <a href="https://vitablehealth.com" class="card" target="_blank">
                 <div class="card-title">Vitable Health</div>
-                <div class="card-url">employers.vitablehealth.com</div>
+                <div class="card-url">://vitablehealth.com</div>
             </a>
 
-            <a href="https://portal.zingage.com/" class="card" target="_blank">
+            <a href="https://zingage.com" class="card" target="_blank">
                 <div class="card-title">Zingage Portal</div>
-                <div class="card-url">portal.zingage.com</div>
+                <div class="card-url">://zingage.com</div>
             </a>
         </main>
     </div>
