@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSK Admin Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --radius: 12px;
+        }
+
+        /* Simple modern dark mode preference support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --card-bg: #1e293b;
+                --text-main: #f8fafc;
+                --text-sub: #94a3b8;
+                --accent: #3b82f6;
+                --accent-hover: #60a5fa;
+                --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-url {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card:hover .card-title {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Workspace Homepage</h1>
+            <p>Quick Access Admin Portal</p>
+        </header>
+
+        <main class="grid">
+            <a href="http://12299.axiscare.com/" class="card" target="_blank">
+                <div class="card-title">AxisCare</div>
+                <div class="card-url">12299.axiscare.com</div>
+            </a>
+
+            <a href="https://tsk.bamboohr.com/" class="card" target="_blank">
+                <div class="card-title">BambooHR</div>
+                <div class="card-url">tsk.bamboohr.com</div>
+            </a>
+
+            <a href="https://go.careacademy.com" class="card" target="_blank">
+                <div class="card-title">CareAcademy</div>
+                <div class="card-url">go.careacademy.com</div>
+            </a>
+
+            <a href="https://backgroundcheck.clearstar.net" class="card" target="_blank">
+                <div class="card-title">ClearStar</div>
+                <div class="card-url">backgroundcheck.clearstar.net</div>
+            </a>
+
+            <a href="https://app.hireology.com" class="card" target="_blank">
+                <div class="card-title">Hireology</div>
+                <div class="card-url">app.hireology.com</div>
+            </a>
+
+            <a href="https://ohpnm.omes.maximus.com/OH_PNM_PROD/" class="card" target="_blank">
+                <div class="card-title">PNM Module</div>
+                <div class="card-url">ohpnm.omes.maximus.com</div>
+            </a>
+
+            <a href="https://qbo.intuit.com/app/get-things-done" class="card" target="_blank">
+                <div class="card-title">QuickBooks Online</div>
+                <div class="card-url">qbo.intuit.com</div>
+            </a>
+
+            <a href="https://ringsense.ringcentral.com/" class="card" target="_blank">
+                <div class="card-title">RingCentral RingSense</div>
+                <div class="card-url">ringsense.ringcentral.com</div>
+            </a>
+
+            <a href="https://service.ringcentral.com/" class="card" target="_blank">
+                <div class="card-title">RingCentral Service</div>
+                <div class="card-url">service.ringcentral.com</div>
+            </a>
+
+            <a href="https://app.sensi.ai/" class="card" target="_blank">
+                <div class="card-title">Sensi.ai</div>
+                <div class="card-url">app.sensi.ai</div>
+            </a>
+
+            <a href="https://appemployer.tapcheck.com" class="card" target="_blank">
+                <div class="card-title">Tapcheck Employer</div>
+                <div class="card-url">appemployer.tapcheck.com</div>
+            </a>
+
+            <a href="https://employers.vitablehealth.com/" class="card" target="_blank">
+                <div class="card-title">Vitable Health</div>
+                <div class="card-url">employers.vitablehealth.com</div>
+            </a>
+
+            <a href="https://portal.zingage.com/" class="card" target="_blank">
+                <div class="card-title">Zingage Portal</div>
+                <div class="card-url">portal.zingage.com</div>
+            </a>
+        </main>
+    </div>
+
+</body>
+</html>
